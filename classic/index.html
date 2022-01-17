@@ -1,0 +1,228 @@
+
+<!--
+Redux OS Source Code
+I know, its really messy.
+
+Just bare with me...
+-->
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<link rel="stylesheet" href="app.css" type="text/css" />
+<script src="https://kit.fontawesome.com/3a8aef8be2.js" crossorigin="anonymous"></script><style>
+	    body {
+	        padding:5px;
+	    }
+	</style>
+	    <title>
+	        Redux OS
+	    </title>
+	    <script>
+	        function refreshDesktop(){
+	            const desktop = document.getElementById("body").style;
+	            setTimeout(function(){
+	                desktop.display = "none";
+	                setTimeout(function(){
+	                    desktop.display = "block";
+	                },50);
+	            }, 50);
+	        }
+	    </script>
+	</HEAD>
+	<BODY id="body">&nbsp;
+		<img src="https://iconarchive.com/download/i19002/iconshock/vista-general/trash.ico"
+		width="50"
+		id="trash-can"
+		class="logo"
+		>
+		<P
+		id="trash-can"
+		class="label"
+		>
+		    Trash Can
+		</P>
+		<div id="bottom-line-tag">
+		    <button class="button-tag-logo"
+		    onClick="redux();"
+		    
+		    id="redux"
+		    >
+		        <i class="fas fa-user-circle"></i>
+		        
+		        Redux
+		    </button>
+		</div>
+		<div id="cont">
+		    <div id="contextMenu" class="context-menu" 
+    style="display: none">
+    <ul>
+        <li><a onClick="reload()">Reload</a></li>
+        <li><a onClick="refreshDesktop()">Refresh Desktop</a></li>
+        <li><a href="#">Element-3</a></li>
+        <li><a href="#">Element-4</a></li>
+        <li><a href="#">Element-5</a></li>
+        <li><a href="#">Element-6</a></li>
+        <li><a href="#">Element-7</a></li>
+    </ul>
+</div>
+<style>
+    body {
+    background-image:url("https://wallpaperaccess.com/full/345330.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    font-family:arial;
+}
+.label {
+    color:white;
+    cursor:pointer;
+}
+.logo {
+    cursor:pointer;
+}
+#bottom-line-tag {
+        height: 40px; 
+    position: fixed; 
+    bottom:0%;
+    width:100%;
+    width:500px;
+    background:#32a852;
+    text-align:center;
+}
+.button-tag-logo {
+    padding:10px;
+    background-color:#257039;
+    background:solid;
+    border:solid;
+    transition:500ms;
+}
+.button-tag-logo:hover {
+    background:#164523;
+}
+@keyframes fade-in {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@keyframes fade-out {
+    from {
+        opacity:1;
+    }
+    to {
+        opacity:0;
+    }
+}
+</style>
+<script>
+	document.onclick = hideMenu;
+	document.oncontextmenu = rightClick;
+	
+	function hideMenu() {
+		document.getElementById("contextMenu")
+				.style.display = "none"
+	}
+
+	function rightClick(e) {
+		e.preventDefault();
+
+		if (document.getElementById("contextMenu")
+				.style.display == "block")
+			hideMenu();
+		else{
+			var menu = document.getElementById("contextMenu")
+
+			menu.style.display = 'block';
+			menu.style.left = e.pageX + "px";
+			menu.style.top = e.pageY + "px";
+		}
+	}
+</script>
+<style type="text/css">
+	.context-menu {
+		position: absolute;
+		text-align: center;
+		background: white;
+		border: 1px solid black;
+		border-radius:5px;
+	}
+
+	.context-menu ul {
+		padding: 0px;
+		margin: 0px;
+		min-width: 150px;
+		list-style: none;
+		border-radius:25px;
+	}
+
+	.context-menu ul li {
+		padding-bottom: 7px;
+		padding-top: 7px;
+		border: 1px solid black;
+		border-radius:5px;
+		transition:500ms;
+	}
+
+	.context-menu ul li a {
+		text-decoration: none;
+		color: black;
+	}
+
+	.context-menu ul li:hover {
+		background: darkgrey;
+	}
+</style>
+<script>
+    function reload(){
+        window.location.reload();
+    }
+</script>
+		</div>
+		<div id="redux-popup">
+		    <i class="fas fa-user-cog"></i>
+		    <p id="label-admin">
+		        Run Administrator Command
+		    </p>
+		</div>
+		<style>
+		@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+		    #redux-popup {
+		        color:white;
+		        background:#95bfa0;
+		        padding:10px;
+		        border-radius:25px;
+		    }
+		    .button-tag-logo {
+		        font-family: 'Gloria Hallelujah', cursive;
+		    }
+		</style><script>function redux(){
+	            const idleButton = document.getElementById("redux-popup").style;
+	            idleButton.animation = "fade-in 1s"
+	            setTimeout(function(){
+	                idleButton.opacity = 1;
+	            }, 1000);
+	        }; function unfocus(){
+	             const idleButton = document.getElementById("redux-popup").style;
+	             idleButton.animation = "fade-out 1s";
+	             setTimeout(function(){
+	                 idleButton.opacity = 0;
+	             }, 1000)
+	        }; //!\\//!\\//!\\//!\\//!\\/!\\//!\\//!\\//!\\//!\\//!\\//!\\
+	        document.onClick= function(){
+	            const idleButton = document.getElementById("redux-popup");
+	            if(clicked == true){
+	                return null;
+	            } else {
+	                unfocus();
+	            }
+	        }
+		</script><style>
+		    #redux-popup {
+		        opacity:0;
+		    }
+		</style>
+	</BODY>
+</HTML>
